@@ -24,8 +24,9 @@ export default function Toast({ message, type = 'success', onDismiss }) {
       style={{
         position: 'fixed',
         bottom: 'calc(var(--bottom-h) + 16px)',
-        left: '50%',
-        transform: 'translateX(-50%)',
+        left: 0,
+        right: 0,
+        margin: '0 auto',
         zIndex: 1000,
         animation: exiting
           ? 'toastOut 0.35s var(--ease-in) forwards'
