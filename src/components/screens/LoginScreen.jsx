@@ -3,9 +3,9 @@ import { USERS } from '../../data/mockData';
 import DoselyLogo from '../ui/DoselyLogo';
 
 const DEMO_ACCOUNTS = [
-  { label: 'Admin',     email: 'admin@dosely.in',  password: 'admin123',  role: 'Administrator' },
-  { label: 'Caregiver', email: 'meena@dosely.in',  password: 'meena123',  role: 'Caregiver' },
-  { label: 'Patient',   email: 'rajesh@dosely.in', password: 'rajesh123', role: 'Patient view' },
+  { label: 'Admin',     email: 'admin@example.com',  password: 'admin123',  role: 'Administrator' },
+  { label: 'Caregiver', email: 'caregiver@example.com', password: 'caregiver123',  role: 'Caregiver' },
+  { label: 'Patient',   email: 'patient@example.com', password: 'patient123', role: 'Patient view' },
 ];
 
 function ArrowRight() {
@@ -29,10 +29,11 @@ const inputStyle = {
   transition: 'border-color 0.15s',
 };
 
-export default function LoginScreen({ onLogin }) {
+export default function LoginScreen({ onLogin, onDemo }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [notice, setNotice] = useState('');
   const [loading, setLoading] = useState(false);
   const [showPass, setShowPass] = useState(false);
   const [expanded, setExpanded] = useState(false);
@@ -216,6 +217,42 @@ export default function LoginScreen({ onLogin }) {
           </div>
         )}
 
+        {/* ── Try the demo (no account needed) ── */}
+        <button
+          type="button"
+          onClick={onDemo}
+          style={{
+            flexShrink: 0,
+            height: 56,
+            borderRadius: 'var(--radius-xs)',
+            background: 'var(--accent)',
+            color: '#fff',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            gap: 2,
+            transition: 'transform 0.1s, filter 0.15s',
+          }}
+          onMouseDown={e => e.currentTarget.style.transform = 'scale(0.98)'}
+          onMouseUp={e => e.currentTarget.style.transform = 'scale(1)'}
+          onMouseLeave={e => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.filter = 'none'; }}
+          onMouseEnter={e => e.currentTarget.style.filter = 'brightness(1.08)'}
+        >
+          <span style={{ fontSize: 'var(--fs-body)', fontWeight: 'var(--fw-semibold)', display: 'flex', alignItems: 'center', gap: 8 }}>
+            Try the demo <ArrowRight />
+          </span>
+          <span style={{ fontSize: 'var(--fs-caption)', opacity: 0.85 }}>
+            No account needed · loads sample patients
+          </span>
+        </button>
+
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-3)', flexShrink: 0 }}>
+          <div style={{ flex: 1, height: 1, background: 'var(--border)' }} />
+          <span style={{ fontSize: 'var(--fs-caption)', color: 'var(--text4)', fontWeight: 'var(--fw-medium)' }}>or sign in</span>
+          <div style={{ flex: 1, height: 1, background: 'var(--border)' }} />
+        </div>
+
         <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: 'var(--sp-3)' }}>
           <div>
             <label
@@ -324,7 +361,7 @@ export default function LoginScreen({ onLogin }) {
           {/* Google */}
           <button
             type="button"
-            onClick={() => {}}
+            onClick={() => setNotice('Social sign-in isn\u2019t connected in this demo. Use \u201cTry the demo\u201d above.')}
             style={{
               height: 52,
               borderRadius: 'var(--radius-xs)',
@@ -358,7 +395,7 @@ export default function LoginScreen({ onLogin }) {
           {/* Apple */}
           <button
             type="button"
-            onClick={() => {}}
+            onClick={() => setNotice('Social sign-in isn\u2019t connected in this demo. Use \u201cTry the demo\u201d above.')}
             style={{
               height: 52,
               borderRadius: 'var(--radius-xs)',
@@ -385,13 +422,18 @@ export default function LoginScreen({ onLogin }) {
             </svg>
             Continue with Apple
           </button>
+          {notice && (
+            <span role="status" style={{ fontSize: 'var(--fs-caption)', color: 'var(--text3)', fontWeight: 'var(--fw-medium)', textAlign: 'center', animation: 'fadeIn 0.15s' }}>
+              {notice}
+            </span>
+          )}
         </div>
 
         {/* Divider before demo */}
         <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--sp-3)' }}>
           <div style={{ flex: 1, height: 1, background: 'var(--border)' }} />
           <span style={{ fontSize: 'var(--fs-caption)', color: 'var(--text4)', fontWeight: 'var(--fw-medium)', whiteSpace: 'nowrap' }}>
-            Or try a demo
+            Or pick a demo role
           </span>
           <div style={{ flex: 1, height: 1, background: 'var(--border)' }} />
         </div>

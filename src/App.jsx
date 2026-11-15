@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
 import { useLocalStorage } from './hooks/useLocalStorage';
-import { MOCK_PATIENTS } from './data/mockData';
+import { MOCK_PATIENTS, USERS } from './data/mockData';
 import { toMins, doseKey } from './utils/helpers';
 
 import SplashScreen from './components/screens/SplashScreen';
@@ -178,12 +178,21 @@ export default function App() {
     );
   }
 
+  // ── Demo: fresh sample data, signed in as the caregiver ──
+  function startDemo() {
+    setPatients(MOCK_PATIENTS);
+    setDoseLog({});
+    setTab('home');
+    setSelectedPatientId(null);
+    setUser(USERS.find(u => u.role === 'caregiver'));
+  }
+
   // ── Not logged in ──────────────────────────────────────────
   if (!user) {
     return (
       <div className="app-shell">
         <div className="app-container">
-          <LoginScreen onLogin={setUser} />
+          <LoginScreen onLogin={setUser} onDemo={startDemo} />
         </div>
       </div>
     );

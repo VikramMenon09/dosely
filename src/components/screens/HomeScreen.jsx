@@ -217,7 +217,7 @@ export default function HomeScreen({ user, patients, doseLog, onMark, onSelectPa
 
   return (
     <>
-      <TopNav title={greeting} subtitle={today} />
+      <TopNav title={greeting} subtitle={`${today} · Demo with sample data`} />
 
       <div className="scroll-content">
         <div style={{ padding: 'var(--sp-4)', display: 'flex', flexDirection: 'column', gap: 'var(--sp-6)' }}>

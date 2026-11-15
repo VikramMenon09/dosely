@@ -1,7 +1,8 @@
+// Sample data for the demo. All names are made up.
 export const MOCK_PATIENTS = [
   {
     id: 'p1',
-    name: 'Rajesh Menon',
+    name: 'Ravi Kapoor',
     age: 68,
     conditions: ['Diabetes', 'Hypertension'],
     medicines: [
@@ -48,7 +49,7 @@ export const MOCK_PATIENTS = [
   },
   {
     id: 'p2',
-    name: 'Lakshmi Iyer',
+    name: 'Lata Rao',
     age: 72,
     conditions: ['Osteoporosis', 'Hypothyroid'],
     medicines: [
@@ -61,7 +62,7 @@ export const MOCK_PATIENTS = [
         times: ['07:00', '19:00'],
         stock: 60,
         refillAt: 20,
-        doctor: 'Dr. Menon',
+        doctor: 'Dr. Iqbal',
         notes: 'After meals',
         color: '#00C896',
       },
@@ -74,7 +75,7 @@ export const MOCK_PATIENTS = [
         times: ['06:30'],
         stock: 5,
         refillAt: 10,
-        doctor: 'Dr. Menon',
+        doctor: 'Dr. Iqbal',
         notes: 'Empty stomach, 30 min before food',
         color: '#7C3AED',
       },
@@ -82,7 +83,7 @@ export const MOCK_PATIENTS = [
   },
   {
     id: 'p3',
-    name: 'Arjun Pillai',
+    name: 'Arun Das',
     age: 45,
     conditions: ['Asthma', 'Anxiety'],
     medicines: [
@@ -119,25 +120,25 @@ export const MOCK_PATIENTS = [
 export const USERS = [
   {
     id: 'u1',
-    name: 'Admin User',
-    email: 'admin@dosely.in',
+    name: 'Demo Admin',
+    email: 'admin@example.com',
     password: 'admin123',
     role: 'admin',
     patientId: null,
   },
   {
     id: 'u2',
-    name: 'Meena Caregiver',
-    email: 'meena@dosely.in',
-    password: 'meena123',
+    name: 'Demo Caregiver',
+    email: 'caregiver@example.com',
+    password: 'caregiver123',
     role: 'caregiver',
     patientId: null,
   },
   {
     id: 'u3',
-    name: 'Rajesh Menon',
-    email: 'rajesh@dosely.in',
-    password: 'rajesh123',
+    name: 'Ravi Kapoor',
+    email: 'patient@example.com',
+    password: 'patient123',
     role: 'patient',
     patientId: 'p1',
   },
