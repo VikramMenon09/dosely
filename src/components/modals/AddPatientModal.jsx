@@ -55,7 +55,7 @@ export default function AddPatientModal({ onSave, onClose }) {
   return (
     <>
       <div onClick={onClose} style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(4px)', WebkitBackdropFilter: 'blur(4px)', zIndex: 200, animation: 'fadeIn 0.18s' }} />
-      <div style={{ position: 'fixed', bottom: 0, left: '50%', transform: 'translateX(-50%)', width: '100%', maxWidth: 430, background: 'var(--surface)', borderRadius: '20px 20px 0 0', zIndex: 201, animation: 'slideUpFade 0.28s var(--ease-spring)', maxHeight: '88dvh', display: 'flex', flexDirection: 'column', boxShadow: 'var(--shadow-lg)' }}>
+      <div style={{ position: 'fixed', bottom: 0, left: '50%', transform: 'translateX(-50%)', width: '100%', maxWidth: 430, background: 'var(--surface)', borderRadius: '12px 12px 0 0', zIndex: 201, animation: 'slideUpFade 0.28s var(--ease-spring)', maxHeight: '88dvh', display: 'flex', flexDirection: 'column', boxShadow: 'var(--shadow-lg)' }}>
 
         <div style={{ display: 'flex', justifyContent: 'center', padding: 'var(--sp-2) 0 0' }}>
           <div style={{ width: 32, height: 4, borderRadius: 99, background: 'var(--border2)' }} />

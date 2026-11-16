@@ -43,27 +43,15 @@ export function greetingByTime() {
   return 'Good evening';
 }
 
-// Generate a stable gradient from a name string
+// Stable solid avatar colour from a name string (muted, brand-compatible)
 export function nameGradient(name) {
   let hash = 0;
   for (let i = 0; i < name.length; i++) {
     hash = (hash << 5) - hash + name.charCodeAt(i);
     hash |= 0;
   }
-  const palettes = [
-    ['#667eea', '#764ba2'],
-    ['#f093fb', '#f5576c'],
-    ['#4facfe', '#00f2fe'],
-    ['#43e97b', '#38f9d7'],
-    ['#fa709a', '#fee140'],
-    ['#a18cd1', '#fbc2eb'],
-    ['#fccb90', '#d57eeb'],
-    ['#84fab0', '#8fd3f4'],
-    ['#a1c4fd', '#c2e9fb'],
-    ['#fd7043', '#ffb74d'],
-  ];
-  const idx = Math.abs(hash) % palettes.length;
-  return `linear-gradient(135deg, ${palettes[idx][0]}, ${palettes[idx][1]})`;
+  const colors = ['#0B6E61', '#3F6E8C', '#8C5A3C', '#6B6A3A', '#7A4F66', '#476B4F', '#9A5B2E', '#4C5F7A'];
+  return colors[Math.abs(hash) % colors.length];
 }
 
 export function initials(name) {

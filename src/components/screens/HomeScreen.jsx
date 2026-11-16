@@ -15,16 +15,6 @@ function NextDoseHero({ dose, onMark }) {
         position: 'relative',
       }}
     >
-      {/* Subtle teal tint overlay */}
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background: 'linear-gradient(135deg, rgba(11,110,97,0.06) 0%, transparent 60%)',
-          pointerEvents: 'none',
-        }}
-      />
-
       <div style={{ position: 'relative' }}>
         <div
           style={{

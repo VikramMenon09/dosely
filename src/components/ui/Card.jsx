@@ -19,12 +19,9 @@ export default function Card({ children, style = {}, onClick, hoverable = false,
         border: '1px solid var(--border)',
         boxShadow: 'var(--shadow-sm)',
         padding,
-        transition: 'box-shadow 0.15s ease, transform 0.1s ease',
+        transition: 'box-shadow 0.15s ease-out',
         cursor: onClick ? 'pointer' : 'default',
-        transform: pressed ? 'scale(0.975)' : 'scale(1)',
-        ...(isClickable && !pressed ? {
-          ':hover': { boxShadow: 'var(--shadow)', transform: 'translateY(-1px)' },
-        } : {}),
+        ...(pressed ? { background: 'var(--surface2)' } : {}),
         ...style,
       }}
     >

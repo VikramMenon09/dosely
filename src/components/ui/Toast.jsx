@@ -10,10 +10,10 @@ export default function Toast({ message, type = 'success', onDismiss }) {
   }, [onDismiss]);
 
   const colors = {
-    success: { bg: 'var(--accent2)', icon: '✓' },
-    error:   { bg: 'var(--danger)',  icon: '✕' },
-    warn:    { bg: 'var(--warn)',    icon: '!' },
-    info:    { bg: 'var(--accent)',  icon: 'i' },
+    success: { bg: 'var(--accent2)', icon: <path d="M5 12l5 5L20 7" /> },
+    error:   { bg: 'var(--danger)',  icon: <path d="M6 6l12 12M18 6L6 18" /> },
+    warn:    { bg: 'var(--warn)',    icon: <path d="M12 6v7M12 17.5v.5" /> },
+    info:    { bg: 'var(--accent)',  icon: <path d="M12 11v6M12 7v.5" /> },
   };
   const { bg, icon } = colors[type] || colors.info;
 
@@ -42,7 +42,7 @@ export default function Toast({ message, type = 'success', onDismiss }) {
           gap: 12,
           background: 'var(--text)',
           color: '#fff',
-          borderRadius: 14,
+          borderRadius: 'var(--radius)',
           padding: '12px 16px',
           boxShadow: 'var(--shadow-lg)',
         }}
@@ -61,7 +61,7 @@ export default function Toast({ message, type = 'success', onDismiss }) {
             flexShrink: 0,
           }}
         >
-          {icon}
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{icon}</svg>
         </div>
         <span style={{ fontSize: 14, fontWeight: 500, lineHeight: 1.4 }}>{message}</span>
       </div>

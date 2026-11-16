@@ -105,7 +105,7 @@ export default function PatientDetail({ patient, doseLog, onMark, onBack, onAddM
                 style={{
                   flex: 1,
                   height: 34,
-                  borderRadius: 6,
+                  borderRadius: 'var(--radius-sm)',
                   fontSize: 'var(--fs-secondary)',
                   fontWeight: activeTab === t ? 'var(--fw-semibold)' : 'var(--fw-medium)',
                   color: activeTab === t ? 'var(--text)' : 'var(--text4)',

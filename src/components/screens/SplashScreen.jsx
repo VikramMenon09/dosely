@@ -30,7 +30,6 @@ export default function SplashScreen({ onDone }) {
         }
         @keyframes dosely-icon-in {
           0%   { opacity: 0; transform: scale(0.55); }
-          60%  { opacity: 1; transform: scale(1.06); }
           100% { opacity: 1; transform: scale(1); }
         }
         @keyframes dosely-splash-out {
@@ -54,7 +53,7 @@ export default function SplashScreen({ onDone }) {
           align-items: center;
           justify-content: center;
           opacity: 0;
-          animation: dosely-icon-in 0.55s 1.05s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+          animation: dosely-icon-in 0.55s 1.05s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         .dosely-splash-wrap {
